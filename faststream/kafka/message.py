@@ -11,11 +11,21 @@ class ConsumerProtocol(Protocol):
 
     async def commit(self) -> None: ...
 
+    async def pause(self) -> None: ...
+    
+    async def resume(self) -> None: ...
+
 
 class FakeConsumer:
     """A fake Kafka consumer."""
 
     async def commit(self) -> None:
+        pass
+
+    async def pause(self) -> None:
+        pass
+    
+    async def resume(self) -> None:
         pass
 
 
